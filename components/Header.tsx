@@ -1,6 +1,6 @@
 // import React, { useState } from 'react'
 
-import { WEBSITE_NAME } from "../constants";
+import { WEBSITE_NAME } from "../lib/constants";
 
 export default function Header() {
   return (

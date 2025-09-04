@@ -1,4 +1,4 @@
-import { STUDENT_NAME, STUDENT_NUMBER, WEBSITE_NAME } from "../constants";
+import { STUDENT_NAME, STUDENT_NUMBER, WEBSITE_NAME } from "@/lib/constants";
 import { getCurrentDate } from "../utils/date";
 
 export default function Footer() {
