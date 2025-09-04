@@ -1,16 +1,35 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Tab } from "@/types";
 
-export function useTabs() {
-  const [tabs, setTabs] = useState<Tab[]>([]);
+const TABS_STORAGE_KEY = "tabsEditorData";
 
-  /* Defining our methods using arrow function means it cannot be called before its defined -> for saftey */
-  const defaultTabData = `<p>
+const defaultTabData = `<p>
   Enter your instructional text here.
 </p>
 <pre><code>
   // Enter your code snippet here.
 </code></pre>`;
+
+export function useTabs() {
+  const [tabs, setTabs] = useState<Tab[]>([]);
+
+  useEffect(() => {
+    try {
+      const storedTabs = localStorage.getItem(TABS_STORAGE_KEY);
+      if (storedTabs) {
+        setTabs(JSON.parse(storedTabs));
+      }
+    } catch (error) {
+      console.error("Failed to parse tabs from localStorage", error);
+    }
+  }, []);
+
+  useEffect(() => {
+     if (tabs.length > 0) {
+      localStorage.setItem(TABS_STORAGE_KEY, JSON.stringify(tabs));
+    }
+  }, [tabs]);
+  /* Defining our methods using arrow function means it cannot be called before its defined -> for saftey */
 
   const addTab = () => {
     if (tabs.length >= 15) {
