@@ -1,4 +1,20 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## CSE3CWA Assignment 1: Tabs Generator
+
+This application was built with next.js, react, tailwind-css and TypeScript to allow teachers to configure coding blocks and suplimentary notes for computer science students
+
+## Features
+
+- Dynamic tab creation (users can add, delete and modify up to 15 tabs)
+- Persistence and cookies (the users tabs and last active navigation are automatically saved into localstorage)
+- Code generation ("Output" generates a functional html file) 
+- Responsive and accessible design (dynamic resizing, mobile friendly and responsive UI for mobile, desktop and colourblind users)
+
+## Tech Stack
+
+- Framework: Next.js 14 (App Router)
+- Language: TypeScript
+- UI Library: React 18
+- Styling: Tailwind CSS
 
 ## Getting Started
 
